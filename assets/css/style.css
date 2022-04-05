@@ -1,0 +1,9 @@
+header {
+    padding: 10px;
+}
+
+header h1 {
+    color: white;
+    background-image: linear-gradient(to right, rgba(59, 110, 196), rgba(35, 4, 85));
+    padding: 10px;
+}
