@@ -7,3 +7,29 @@ header h1 {
     background-image: linear-gradient(to right, rgba(59, 110, 196), rgba(35, 4, 85));
     padding: 10px;
 }
+
+.card {
+    border: none;
+}
+
+label {
+    font-size: 2.5vw;
+}
+
+input {
+    width: 100%;
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 8px;
+}
+
+button {
+    margin: 10px 0 10px 0;
+    border-radius: 5px;
+    background-color: rgba(90, 162, 233);
+    color: rgb(231, 231, 231);
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 0 5px 0;
+}
