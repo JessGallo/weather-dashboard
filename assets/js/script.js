@@ -2,10 +2,17 @@
 var search = document.querySelector('.search');
 var searchBar = document.getElementById('city');
 var searchBtn = document.getElementById('searchBtn');
+var searchHistoryList = document.getElementById('search-history');
 
 search.addEventListener('submit', function(event) {
     event.preventDefault();
     console.log(searchBar.value);;
+
+    var searchHistory = document.createElement('div');
+    searchHistory.textContent = searchBar.value;
+    searchHistory.classList.add('searchHistory');
+    searchHistoryList.appendChild(searchHistory);
+
 
     const baseUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=';
     const endpoint = '&limit=1&appid=d68c8ccd94a05cf881bb3330ec9a4a19';
