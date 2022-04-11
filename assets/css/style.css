@@ -85,3 +85,8 @@ form {
 .h3 {
     font-size: large;
 }
+
+img {
+    height: 35px;
+    width: 35px;
+}

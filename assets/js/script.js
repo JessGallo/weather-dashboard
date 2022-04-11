@@ -48,13 +48,16 @@ search.addEventListener('submit', function(event) {
                         var wind = data.current.wind_speed;
                         var humidity = data.current.humidity;
                         var uvIndex = data.current.uvi;
-                        var icon = data.current.weather[0].icon;
-                        //var iconUrl = 'http://openweathermap.org/img/w/' + icon + '.png';
+                        console.log(iconImage);
 
                         var cityName = document.createElement('h2');
                         cityName.textContent = searchBar.value + ' (' + date + ')';
                         cityName.classList.add('h2', 'font-weight-bold');
                         weatherDisplay.appendChild(cityName);
+                        var icon = data.current.weather[0].icon;
+                        var iconImage = document.createElement('img');
+                        iconImage.src = 'https://openweathermap.org/img/w/' + icon + '.png';
+                        weatherDisplay.appendChild(iconImage);
 
                         var tempDisplay = document.createElement('div');
                         tempDisplay.textContent = 'Temp: ' + temp + ' °F';
@@ -83,6 +86,7 @@ search.addEventListener('submit', function(event) {
                                 })
                                 .then(function (data) {
                                         //day 1
+                                        console.log(data);
                                         var tempForecast = data.daily[0].temp.day;
                                         var windForecast = data.daily[0].wind_speed;
                                         var humidityForecast = data.daily[0].humidity;
@@ -92,6 +96,11 @@ search.addEventListener('submit', function(event) {
                                         dateOne.textContent = tomorrow1;
                                         dateOne.classList.add('h3','font-weight-bold', 'weatherData');
                                         forecast1.appendChild(dateOne);
+
+                                        var icon = data.daily[0].weather[0].icon;
+                                        var iconImage = document.createElement('img');
+                                        iconImage.src = 'https://openweathermap.org/img/w/' + icon + '.png';
+                                        forecast1.appendChild(iconImage);
 
                                         var tempDis = document.createElement('div');
                                         tempDis.textContent = 'Temp: ' + tempForecast + ' °F';
@@ -119,6 +128,11 @@ search.addEventListener('submit', function(event) {
                                         dateOne.classList.add('h3','font-weight-bold', 'weatherData');
                                         forecast2.appendChild(dateOne);
 
+                                        var icon = data.daily[1].weather[0].icon;
+                                        var iconImage = document.createElement('img');
+                                        iconImage.src = 'https://openweathermap.org/img/w/' + icon + '.png';
+                                        forecast2.appendChild(iconImage);
+
                                         var tempDis = document.createElement('div');
                                         tempDis.textContent = 'Temp: ' + tempForecast + ' °F';
                                         tempDis.classList.add('dayOne', 'weatherData');
@@ -145,6 +159,11 @@ search.addEventListener('submit', function(event) {
                                         dateOne.classList.add('h3','font-weight-bold', 'weatherData');
                                         forecast3.appendChild(dateOne);
 
+                                        var icon = data.daily[2].weather[0].icon;
+                                        var iconImage = document.createElement('img');
+                                        iconImage.src = 'https://openweathermap.org/img/w/' + icon + '.png';
+                                        forecast3.appendChild(iconImage);
+
                                         var tempDis = document.createElement('div');
                                         tempDis.textContent = 'Temp: ' + tempForecast + ' °F';
                                         tempDis.classList.add('dayOne', 'weatherData');
@@ -165,11 +184,16 @@ search.addEventListener('submit', function(event) {
                                         var windForecast = data.daily[3].wind_speed;
                                         var humidityForecast = data.daily[3].humidity;
 
-                                        const tomorrow4 = moment().add(2, 'days').format("M/D/YYYY");
+                                        const tomorrow4 = moment().add(4, 'days').format("M/D/YYYY");
                                         var dateOne = document.createElement('div');
                                         dateOne.textContent = tomorrow4;
                                         dateOne.classList.add('h3','font-weight-bold', 'weatherData');
                                         forecast4.appendChild(dateOne);
+
+                                        var icon = data.daily[3].weather[0].icon;
+                                        var iconImage = document.createElement('img');
+                                        iconImage.src = 'https://openweathermap.org/img/w/' + icon + '.png';
+                                        forecast4.appendChild(iconImage);
 
                                         var tempDis = document.createElement('div');
                                         tempDis.textContent = 'Temp: ' + tempForecast + ' °F';
@@ -191,11 +215,16 @@ search.addEventListener('submit', function(event) {
                                         var windForecast = data.daily[4].wind_speed;
                                         var humidityForecast = data.daily[4].humidity;
 
-                                        const tomorrow5 = moment().add(2, 'days').format("M/D/YYYY");
+                                        const tomorrow5 = moment().add(5, 'days').format("M/D/YYYY");
                                         var dateOne = document.createElement('div');
                                         dateOne.textContent = tomorrow5;
                                         dateOne.classList.add('h3','font-weight-bold', 'weatherData');
                                         forecast5.appendChild(dateOne);
+
+                                        var icon = data.daily[4].weather[0].icon;
+                                        var iconImage = document.createElement('img');
+                                        iconImage.src = 'https://openweathermap.org/img/w/' + icon + '.png';
+                                        forecast5.appendChild(iconImage);
 
                                         var tempDis = document.createElement('div');
                                         tempDis.textContent = 'Temp: ' + tempForecast + ' °F';
