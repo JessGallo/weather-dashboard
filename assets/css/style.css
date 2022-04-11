@@ -64,4 +64,24 @@ form {
     border-color: black;
     border-width: 1px;
     margin-bottom: 10px;
+    padding: 5px;
+}
+
+.weatherData {
+    padding: 10px;
+}
+
+.forecast {
+    padding: 0 20px 0 20px;
+}
+
+.forecast1, .forecast2, .forecast3, .forecast4, .forecast5 {
+    background-color: rgba(51,71,90);
+    color: white;
+    padding: 5px;
+    margin: 5px;
+}
+
+.h3 {
+    font-size: large;
 }
