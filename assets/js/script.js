@@ -23,7 +23,7 @@ search.addEventListener('submit', function(event) {
     searchHistory.classList.add('searchHistory');
     searchHistoryList.appendChild(searchHistory);
 
-    const baseUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=';
+    const baseUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=';
     const endpoint = '&limit=1&appid=d68c8ccd94a05cf881bb3330ec9a4a19';
     const url = baseUrl + searchBar.value + endpoint;
 
