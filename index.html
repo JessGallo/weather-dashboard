@@ -8,25 +8,31 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-<body>
+<body class="flex-column min-100vh">
     <header class="container col-12">
         <h1 class="text-center font-weight-bold">
             Weather Dashboard
         </h1>
     </header>
     <main class="flex-row justify-space-between">
-        <div class="col-12 col-md-3">
-            <div class="card">
-                <form class="search">
-                    <label for="search" class="font-weight-bold">Search for a City:</label>
-                    <input type="text" placeholder="San Diego" name="city" id="city" class="form-input" />
-                    <button type="submit" class="btn-block" id="searchBtn">Search</button>
-                </form>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="card">
+                    <form class="search">
+                        <label for="search" class="font-weight-bold">Search for a City:</label>
+                        <input type="text" placeholder="San Diego" name="city" id="city" class="form-input" />
+                        <button type="submit" class="btn-block" id="searchBtn">Search</button>
+                    </form>
+                </div>
+                <div class="card" id="search-history"></div>
             </div>
-            <div class="card" id="search-history"></div>
-        </div>
-        <div class="col-12 col-md-9">
-            <div class="card weather-display"></div>
+            <div class="col-12 col-md-8">
+                <div class="card weatherDisplay"></div>
+                <div class="card history">
+                    <h2 class="h2 font-weight-bold">5-Day Forecast:</h2>
+                </div>
+            </div>
+
         </div>
     </main>
     <script src="./assets/js/script.js"></script>

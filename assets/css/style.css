@@ -8,11 +8,19 @@ header h1 {
     padding: 10px;
 }
 
+main {
+    padding: 0 15px 0 15px;
+}
+
 .card {
     border: none;
 }
 
 label {
+    font-size: 2.5vw;
+}
+
+.h2 {
     font-size: 2.5vw;
 }
 
@@ -49,4 +57,11 @@ form {
     border-bottom-style: solid;
     border-color: rgb(157, 157, 157);
     padding-bottom: 10px;
+}
+
+.weatherDisplay {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    margin-bottom: 10px;
 }

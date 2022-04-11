@@ -3,6 +3,7 @@ var search = document.querySelector('.search');
 var searchBar = document.getElementById('city');
 var searchBtn = document.getElementById('searchBtn');
 var searchHistoryList = document.getElementById('search-history');
+var weatherDisplay = document.querySelector('.weatherDisplay');
 
 search.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -12,6 +13,11 @@ search.addEventListener('submit', function(event) {
     searchHistory.textContent = searchBar.value;
     searchHistory.classList.add('searchHistory');
     searchHistoryList.appendChild(searchHistory);
+
+    var cityName = document.createElement('h2');
+    cityName.textContent = searchBar.value;
+    cityName.classList.add('h2', 'font-weight-bold');
+    weatherDisplay.appendChild(cityName);
 
 
     const baseUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=';
@@ -36,6 +42,27 @@ search.addEventListener('submit', function(event) {
                     })
                     .then(function (data) {
                         console.log(data);
+                        var temp = data.current.temp;
+                        var wind = data.current.wind_speed;
+                        var humidity = data.current.humidity;
+                        var uvIndex = data.current.uvi;
+
+                        var tempDisplay = document.createElement('div');
+                        tempDisplay.textContent = 'Temp: ' + temp + ' °F';
+                        weatherDisplay.appendChild(tempDisplay);
+
+                        var windDisplay = document.createElement('div');
+                        windDisplay.textContent = 'Wind: ' + wind + ' MPH';
+                        weatherDisplay.appendChild(windDisplay);
+
+                        var humidityDisplay = document.createElement('div');
+                        humidityDisplay.textContent = 'Humidity: ' + humidity + '%';
+                        weatherDisplay.appendChild(humidityDisplay);
+
+                        var uviDisplay = document.createElement('div');
+                        uviDisplay.textContent = 'UV Index: ' + uvIndex;
+                        weatherDisplay.appendChild(uviDisplay);
+
                     })
             }
 
